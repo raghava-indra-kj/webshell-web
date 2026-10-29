@@ -1,0 +1,42 @@
+{
+    "name": "node-foundation",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "packageManager": "pnpm@10.18.3",
+    "engines": {
+        "node": ">=24.21.0 <25"
+    },
+    "scripts": {
+        "setup:project": "node scripts/setup-project.mjs",
+        "dev": "node --env-file-if-exists=env/.env --import tsx --watch src/main.ts",
+        "build": "tsc -p tsconfig.build.json",
+        "start": "node --env-file-if-exists=env/.env --enable-source-maps dist/main.js",
+        "typecheck": "tsc --noEmit",
+        "lint": "oxlint",
+        "architecture:check": "depcruise src --config .dependency-cruiser.cjs",
+        "test": "vitest",
+        "test:run": "vitest run",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "dependencies": {
+        "@fastify/cors": "11.3.1",
+        "@fastify/helmet": "13.2.0",
+        "@fastify/rate-limit": "11.2.1",
+        "@fastify/swagger": "9.9.2",
+        "@fastify/swagger-ui": "6.1.2",
+        "fastify": "5.12.7",
+        "fastify-type-provider-zod": "7.0.0",
+        "zod": "4.6.5"
+    },
+    "devDependencies": {
+        "@types/node": "^24.19.2",
+        "dependency-cruiser": "18.7.0",
+        "oxlint": "1.81.0",
+        "prettier": "3.9.9",
+        "tsx": "4.23.15",
+        "typescript": "6.0.2",
+        "vitest": "5.0.3"
+    }
+}

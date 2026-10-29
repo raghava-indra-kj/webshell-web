@@ -5,7 +5,7 @@ Web application for WebShell.
 ## Structure
 
 - `frontend/`: React application built with TypeScript, Vite, and Tailwind CSS.
-- `backend/`: Reserved for the backend application.
+- `backend/`: Node.js API foundation built with TypeScript, Fastify, and domain-driven module boundaries.
 
 ## Frontend development
 
@@ -25,3 +25,9 @@ Run these commands from `frontend/`:
 pnpm build
 pnpm lint
 ```
+
+## Backend development
+
+Use the Node version in `backend/.nvmrc` and pnpm 10.18.3. From `backend/`, run `pnpm install --frozen-lockfile`, optionally run `pnpm setup:project`, then run `pnpm dev`.
+
+The backend runs without a database or external services. See [backend setup, commands, and architecture](backend/README.md) for local development and validation commands.
